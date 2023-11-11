@@ -1,3 +1,5 @@
+import os
+
 def initialize_board():
     return [[' ' for _ in range(3)] for _ in range(3)]
 
@@ -45,17 +47,19 @@ def main():
     board = initialize_board()
     player = 'X'  # X always goes first
     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print_board(board)
         player_input(board, player)
         if check_win(board, player):
+            os.system('cls' if os.name == 'nt' else 'clear')
             print_board(board)
             print(f"Player {player} wins!")
             break
         if check_tie(board):
+            os.system('cls' if os.name == 'nt' else 'clear')    
             print_board(board)
             print("It's a tie!")
             break
         player = switch_player(player)
 
-if __name__ == "__main__":
-    main()
+main()
