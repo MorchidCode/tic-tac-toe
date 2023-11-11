@@ -62,4 +62,10 @@ def main():
             break
         player = switch_player(player)
 
-main()
+continue_game = True
+while continue_game:
+    main()
+
+    new_game = input("Do you want new game? ansewr by 'yes' or 'no': ").lower
+    if new_game == "no":
+        break
